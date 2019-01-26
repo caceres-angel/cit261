@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Meta Tags -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="Week 3 - JavaScript - Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays " />
+    <meta name="keywords" content="education,school,university,educational,learn,learning,teaching,workshop" />
+    <meta name="author" content="Angel Caceres" />
+
+    <!-- Page Title -->
+    <title>CIT 261 - Week 3 - JavaScript - Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Lato');
+        *{
+            font-family: 'Lato', sans-serif;
+            margin: 1%; box-sizing: border-box;
+        }
+        .first {
+            width:45%;
+            border:1px solid black;
+            float:left;
+            padding: 1%;
+        }
+
+        .first div {
+            border:1px solid red;
+        }
+
+        .second {
+            width:45%;
+            border:1px solid black;
+            float:right;
+            padding: 1%;
+        }
+
+        
+        .second div {
+            border:1px solid black;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <!-- Start main-content -->
+    <h1>JavaScript - Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays / Objects Creation, Functions, Inheritance, Properties, Methods</h1>
+    <div class='first'>
+        <h2>Javascript</h2>
+        
+        <h3>Variables</h3>
+        <div>
+            <pre>
+                <code>
+                var x = 5;
+                var y = 10;
+                var z = x + y;
+            </code>
+        </div>
+        <h3>Arrays</h3>
+        <div>
+            <pre>
+                <code>
+                var cars = ["Saab", "Volvo", "BMW"];
+            </code>
+            <div id='arrayDiv'></div>
+            <script>
+                var cars = ["Saab", "Volvo", "BMW"];
+
+                document.getElementById('arrayDiv').innerHTML = cars;
+
+            </script>
+        </div>
+        <h3>Loops</h3>
+        <div>
+            <pre>
+                <code>
+                <br />for (var i = 0; i < 5; i++) {
+                    
+                <br />text += "# " + i + "<br>";
+                
+                <br />}
+                
+                <br />document.getElementById("loopsDiv").innerHTML = text;
+            </code>
+            <div id='loopsDiv'></div>
+            <script>
+                var text = "";
+                for (var i = 0; i < 5; i++) {
+                    text += "# " + i + "<br>";
+                }
+                document.getElementById("loopsDiv").innerHTML = text;
+
+            </script>
+            
+        </div>
+
+        <h3>Conditional Statements</h3>
+        <div>
+            <pre>
+                <code>
+                var cars = ["Saab", "Volvo", "BMW"];
+            </code>
+            <div id='conditionDiv'></div>
+            <script>
+                var cars = ["Saab", "Volvo", "BMW"];
+
+                if(cars[1]=='Volvo'){
+                    document.getElementById('conditionDiv').innerHTML = cars[1];
+                } else {
+                    document.getElementById('conditionDiv').innerHTML = "This car is not a Volvo";
+                }
+
+            </script>
+        </div>
+        <h3>Functions</h3>
+        <div>
+            <pre>
+                <code>
+                function multiplyNum(){
+
+                    var result = a+b;
+                    document.getElementById('functionsDiv').innerHTML = result;
+                }                
+            </code>
+            <div id='functionsDiv'><button onclick="multiplyNum()">Multiply 250*40</button></div>
+            <script>
+
+            function multiplyNum(){
+
+                var a = 250;
+                var b = 40;
+
+                var result = a*b;
+
+                document.getElementById('functionsDiv').innerHTML = result;
+            }                
+                
+            </script>
+            
+        </div>
+        <h3>Parameters</h3>
+        <div>
+            <pre>
+                <code>
+                function calculateSum(a,b){
+
+                    var sum = a+b;
+                    document.getElementById('parametersDiv').innerHTML = sum;
+                }
+
+            </code>
+            <div id='parametersDiv'><button onclick="calculateSum(150,250)">Calculate Sum</button></div>
+            <script>
+
+                function calculateSum(a,b){
+
+                    var sum = a+b;
+                    document.getElementById('parametersDiv').innerHTML = sum;
+                }
+                
+                
+            </script>
+            
+        </div>
+        
+        <h3>Associative Arrays</h3>
+        <div>
+            <pre>
+                <code>
+                var person = [];
+
+                person[0] = "John";
+                person[1] = "Doe";
+                person[2] = 46;
+                var x = person.length;     // person.length will return 3
+                var y = person[0];         // person[0] will return "John"
+
+            </code>
+            <div id='associateDiv'></div>
+            <script>
+                var person = [];
+
+                person[0] = "John";
+                person[1] = "Doe";
+                person[2] = 46;
+                var x = person.length;     // person.length will return 3
+                var y = person[0];         // person[0] will return "John"
+                
+                document.getElementById('associateDiv').innerHTML = person;
+
+            </script>
+        </div>
+
+    </div>
+
+    <div class='second'>
+        <h2>Javascript Objects</h2>
+
+        <h3>Object Creation</h3>
+        <div>
+            <pre>
+                <code>
+                var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+            </code>
+            <div id='jO'></div>
+            <script>
+                var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+
+                document.getElementById("jO").innerHTML = person.firstName + " is " + person.age + " years old.";
+
+            </script>
+        </div>
+        
+        <h3>Functions</h3>
+
+            <pre>
+                <code>
+
+                        var person1 = {
+                            firstName: "John",
+                            lastName : "Doe",
+                            id       : 5566,
+                            fullName : function() {
+                                return "Full name of the person in this Object is " + this.firstName + " " + this.lastName;
+                            }
+                        };
+        
+                        document.getElementById("jOf").innerHTML = person1.fullName();
+                  
+                </code>
+            </pre>
+            <div id='jOf'>asd</div>
+            <script>
+
+                 var person1 = {
+                    firstName: "John",
+                    lastName : "Doe",
+                    id       : 5566,
+                    fullName : function() {
+                        return "Full name of the person in this Object is " + this.firstName + " " + this.lastName;
+                    }
+                };
+
+                document.getElementById("jOf").innerHTML = person1.fullName();
+
+            </script>
+
+        <h3>Inheritance</h3>
+
+        <pre>
+            <code>
+                function Person(first, last, age, eye) {
+                    this.firstName = first;
+                    this.lastName = last;
+                    this.age = age;
+                    this.eyeColor = eye;
+                }
+                
+                var myFather = new Person("John", "Doe", 50, "blue");
+                var myMother = new Person("Sally", "Rally", 48, "green");
+                
+                document.getElementById("jOI").innerHTML = "My father is " + myFather.age 
+                + ". My mother is " + myMother.age; 
+            </pre>
+
+        </pre>
+
+        </code>
+        <div id='jOI'>asd</div>
+        <script>
+            function Person(first, last, age, eye) {
+                this.firstName = first;
+                this.lastName = last;
+                this.age = age;
+                this.eyeColor = eye;
+            }
+            
+            var myFather = new Person("John", "Doe", 50, "blue");
+            var myMother = new Person("Sally", "Rally", 48, "green");
+            
+            document.getElementById("jOI").innerHTML = "My father is " + myFather.age + ". My mother is " + myMother.age; 
+            </script>
+
+        <h3>Properties</h3>
+        <div>
+            <pre>
+                <code>
+                        var person = {
+                            firstname:"John",
+                            lastname:"Doe",
+                            age:50,
+                            eyecolor:"blue"
+                          };
+                </code>
+            </pre>
+        </div>
+        <div id='jOP'></div>
+        <script>
+            var person = {
+                firstname:"John",
+                lastname:"Doe",
+                age:50,
+                eyecolor:"blue"
+            };
+            document.getElementById("jOP").innerHTML  = person.firstname + " is " + person.age + " years old.";        
+        </script>
+        <h3>Methods</h3>
+        <div>
+            <pre>
+                <code>
+                        const employees = {
+                            boss: 'Michael',
+                            secretary: 'Pam',
+                            sales: 'Jim',
+                            accountant: 'Oscar'
+                        };
+                        
+                        // Get the keys of the object
+                        const keys = Object.keys(employees);
+                        
+                        console.log(keys);
+                </code>
+            </pre>
+            <div id='jOM'></div>
+            <script>
+            const employees = {
+                boss: 'Michael',
+                secretary: 'Pam',
+                sales: 'Jim',
+                accountant: 'Oscar'
+            };
+
+            // Get the keys of the object
+            const keys = Object.keys(employees);
+
+            console.log(keys);
+            document.getElementById('jOM').innerHTML = keys;
+            
+            </script>
+        </div>
+
+    </div>
+</body>
+</html>
