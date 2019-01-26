@@ -206,6 +206,9 @@
             <pre>
                 <code>
                 var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+                
+                document.getElementById("jO").innerHTML = person.firstName + " is " 
+                + person.age + " years old.";
             </code>
             <div id='jO'></div>
             <script>
@@ -226,7 +229,8 @@
                             lastName : "Doe",
                             id       : 5566,
                             fullName : function() {
-                                return "Full name of the person in this Object is " + this.firstName + " " + this.lastName;
+                                return "Full name of the person in this Object is " 
+                                + this.firstName + " " + this.lastName;
                             }
                         };
         
